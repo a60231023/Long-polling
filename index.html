@@ -1,0 +1,20 @@
+<html>
+      <head>
+        <title>Long Polling Example</title>
+      </head>
+      <body>
+        <h1>Long Polling Example</h1>
+        <p>Waiting for updates...</p>
+        <script>
+          function longPoll() {
+            fetch('/updates')
+              .then(response => response.text())
+              .then(data => {
+                document.body.innerHTML += '<p>' + data + '</p>';
+                longPoll();
+              });
+          }
+          longPoll();
+        </script>
+      </body>
+    </html>
