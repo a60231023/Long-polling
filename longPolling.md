@@ -4,11 +4,13 @@
 
 ### Table of contents:
 
+
 - [Introduction Long Polling](#introduction-long-polling)
 - [How Long Polling Works](#how-long-polling-works)
 - [Why do we need Long Polling?](#why-do-we-need-long-polling)
 - [Implementation](#implementation)
 - [Explanation](#explanation)
+- [Comparison with other communication design pattern](#comparison-with-other-communication-design-pattern)
 - [Conclusion](#conclusion)
 
 # Introduction Long Polling
@@ -152,6 +154,22 @@ app.listen(3000, () => {
 
 
 ![Screenshot--1341-](/content/images/2023/02/Screenshot--1341-.png)
+
+# Comparison with other communication design pattern
+<br>
+
+>Here's a comparison of long polling with other communication design patterns:
+
+**Polling or short polling :** In contrast to long polling, polling requires the client to repeatedly check with the server for new data, which can result in wasted resources if the server doesn't have any updates. Long polling reduces the amount of unnecessary polling and improves efficiency.
+
+**WebSockets:** WebSockets are another real-time communication design pattern that allow for bidirectional communication between a client and server. However, unlike long polling, WebSockets maintain an open connection and allow for real-time data transfer in both directions, without the need for repeated requests.
+
+**Server-Sent Events:** Server-Sent Events (SSE) is another real-time communication pattern that involves a persistent connection between the client and server. Like long polling, it allows for real-time updates, but it does not require the client to send a request to the server. Instead, the server pushes updates to the client as they become available.
+
+In summary, **long polling** is a communication design pattern that falls somewhere between polling and WebSockets in terms of efficiency and real-time capabilities. It's useful in situations where real-time updates are needed but WebSockets are not available or practical, and it provides a more efficient alternative to traditional polling.
+
+<br>
+
 # Conclusion
 <br>
 
